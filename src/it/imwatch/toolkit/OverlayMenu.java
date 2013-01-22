@@ -21,39 +21,23 @@ import it.imwatch.common.util.DebugHelper;
  * Theme.ImWatch, and a wrapper layout containing both the
  * OverlayMenu and the actual layout.
  * <p/>
- * An example of said wrapper layout is as follows:
- * <pre style="color:#000000; background-color:#ffffff; font-size:10pt; font-family:'monospace';">
- * <span style="color:#000000; font-weight:bold">&lt;RelativeLayout</span> xmlns:<span
- * style="color:#830000">android</span>=<span style="color:#ff0000">&quot;http://schemas.android
- * .com/apk/res/android&quot;</span>
- * xmlns:<span style="color:#830000">lib</span>=<span style="color:#ff0000">&quot;http://schemas.android
- * .com/apk/res-auto&quot;</span>
- * android:<span style="color:#830000">layout_height</span>=<span style="color:#ff0000">&quot;fill_parent&quot;</span>
- * android:<span style="color:#830000">layout_width</span>=<span style="color:#ff0000">&quot;fill_parent&quot;</span>
- * <span style="color:#000000; font-weight:bold">&gt;</span>
- * <p/>
- * <span style="color:#000000; font-weight:bold">&lt;include</span>
- * <span style="color:#830000">layout</span>=<span style="color:#ff0000">&quot;&#64;layout/main&quot;</span>
- * <span style="color:#000000; font-weight:bold">/&gt;</span>
- * <p/>
- * <span style="color:#000000; font-weight:bold">&lt;it</span>.imwatch.toolkit.OverlayMenu
- * android:<span style="color:#830000">id</span>=<span style="color:#ff0000">&quot;&#64;+id/overlay_menu&quot;</span>
- * android:<span style="color:#830000">layout_height</span>=<span style="color:#ff0000">&quot;wrap_content&quot;</span>
- * android:<span style="color:#830000">layout_width</span>=<span style="color:#ff0000">&quot;fill_parent&quot;</span>
- * android:<span style="color:#830000">layout_alignParentLeft</span>=<span style="color:#ff0000">&quot;true&quot;</span>
- * android:<span style="color:#830000">layout_alignParentBottom</span>=<span style="color:#ff0000">&quot;true&quot;
- * </span>
- * android:<span style="color:#830000">layout_alignParentRight</span>=<span style="color:#ff0000">&quot;true&quot;
- * </span>
- * lib:<span style="color:#830000">rightButtonIcon</span>=<span style="color:#ff0000">&quot;&#64;
- * drawable/ic_menu_back&quot;</span>
- * <span style="color:#000000; font-weight:bold">/&gt;</span>
- * <p/>
- * <span style="color:#000000; font-weight:bold">&lt;/RelativeLayout&gt;</span>
- * </pre>
- * <p/>
- * <p/>
- * </RelativeLayout>
+ * An example of said wrapper layout is as follows:<p/>
+ * <pre>&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ * &nbsp;&nbsp;&nbsp;&nbsp;xmlns:lib="http://schemas.android.com/apk/res-auto"
+ * &nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="fill_parent"
+ * &nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="fill_parent"&gt;
+ *
+ * &nbsp;&nbsp;&nbsp;&nbsp;&lt;include layout="@layout/main"/&gt;
+ *
+ * &nbsp;&nbsp;&nbsp;&nbsp;&lt;it.imwatch.toolkit.OverlayMenu
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/overlay_menu"
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="wrap_content"
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="fill_parent"
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_alignParentLeft="true"
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_alignParentBottom="true"
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_alignParentRight="true"
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lib:rightButtonIcon="@drawable/ic_menu_back"/&gt;
+ * &lt;/RelativeLayout&gt;</pre>
  * <p/>
  * <p/>
  * Use the following attributes in the XML layout to customize
@@ -626,7 +610,7 @@ public class OverlayMenu extends RelativeLayout {
          * Called when the menu visibility state changes, after the
          * animation (if any) completes.
          *
-         * @param visibilityState Either {@link View#VISIBLE} or{@link View#GONE}.
+         * @param visibilityState Either {@link View#VISIBLE} or {@link View#GONE}.
          */
         void onStateChanged(int visibilityState);
     }

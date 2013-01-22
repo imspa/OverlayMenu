@@ -12,13 +12,6 @@ import java.io.FilenameFilter;
 /**
  * Debugging helper class, contains static methods to determine the debug
  * status.
- * <p/>
- * Created on: 10/9/12 Time: 10:19 AM
- * File version: 1.0
- * <p/>
- * Changelog:
- * Version 1.0
- * * Initial revision
  */
 public class DebugHelper {
 
@@ -36,19 +29,19 @@ public class DebugHelper {
 
     /**
      * Gets a value indicating if the current environment is a debugging environment.
-     * This is determined by the value of <pre>BuildConfig.DEBUG</pre> (which is set
+     * This is determined by the value of <code>BuildConfig.DEBUG</code> (which is set
      * at build time to true iff the app is exported as a release build) or by the
      * presence of a file on the root of the external storage whose filename is
-     * <pre>imWatch-DEBUG</pre>.
+     * <code>imWatch-DEBUG</code>.
      * <p/>
-     * Please note that if {@link #isVerboseDebug()} returns <pre>true</pre>, it is
+     * Please note that if {@link #isVerboseDebug()} returns <code>true</code>, it is
      * assumed that regular debug is enabled as well, so in that case this method
-     * returns <pre>true</pre> even if there's no imWatch-DEBUG file in
-     * <pre>/imdata</pre>.
+     * returns <code>true</code> even if there's no <code>imWatch-DEBUG</code> file in
+     * <code>/imdata</code>.
      * <p/>
      * If the external storage is currently unmounted, the file is assumed not present.
      *
-     * @return Returns <pre>true</pre> if debug mode is enabled, else <pre>false</pre>.
+     * @return Returns <code>true</code> if debug mode is enabled, else <code>false</code>.
      */
     public static boolean isDebug() {
         String sdcardState = Environment.getExternalStorageState();
@@ -83,11 +76,11 @@ public class DebugHelper {
     /**
      * Gets a value indicating if the current environment is a verbose debugging environment.
      * This is determined by the value of by the presence of a file on the root of the
-     * external storage which filename is <pre>imWatch-DEBUG-VERBOSE</pre>.
+     * external storage which filename is <code>imWatch-DEBUG-VERBOSE</code>.
      * <p/>
      * If the external storage is currently unmounted, the file is assumed not present.
      *
-     * @return Returns <pre>true</pre> if debug mode is enabled, else <pre>false</pre>.
+     * @return Returns <code>true</code> if debug mode is enabled, else <code>false</code>.
      */
     public static boolean isVerboseDebug() {
         String sdcardState = Environment.getExternalStorageState();
