@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent">
+
+    <ImageButton android:id="@+id/__menubar_left_button"
+                 android:contentDescription="@string/menu_description_left"
+                 android:background="@drawable/menu_bg_left"
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentLeft="true"
+                 android:adjustViewBounds="true"
+                 android:persistentDrawingCache="none"
+                 android:tag="left_button"
+                 android:src="?attr/leftButtonIcon"/>
+
+    <ImageButton android:id="@+id/__menubar_right_button"
+                 android:contentDescription="@string/menu_description_right"
+                 android:background="@drawable/menu_bg_right"
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:scaleType="centerInside"
+                 android:adjustViewBounds="true"
+                 android:persistentDrawingCache="none"
+                 android:tag="right_button"
+                 android:src="?attr/rightButtonIcon"/>
+
+</RelativeLayout>

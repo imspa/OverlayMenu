@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Overlay Menu</string>
+    <string name="menu_description_left">Left menu button</string>
+    <string name="menu_description_right">Right menu button</string>
+    <string name="label_text">Touch me to show the menu!\nLong press to hide it.</string>
+    <string name="button_text">TEST BUTTON\n(check collisions)</string>
+</resources>

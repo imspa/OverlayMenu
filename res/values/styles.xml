@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Theme.ExampleTheme" parent="Theme.ImWatch">
+        <!-- Menu/item attributes -->
+        <item name="rightButtonIcon">@drawable/ic_menu_font_size</item>
+        <!--item name="leftButtonVisibility">gone</item>
+        <item name="rightButtonVisibility">visible</item>
+        <item name="autoHide">true</item-->
+    </style>
+
+</resources>

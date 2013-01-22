@@ -1,0 +1,68 @@
+<resources>
+    <style name="ImWatch.__Theme" parent="android:Theme.Black">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ImWatch.__Theme.NoTitleBar" parent="android:Theme.Black.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ImWatch.__Theme.NoTitleBar.Fullscreen" parent="android:Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ImWatch.__Theme.Light" parent="android:Theme.Light">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ImWatch.__Theme.Light.NoTitleBar" parent="android:Theme.Light.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ImWatch.__Theme.Light.NoTitleBar.Fullscreen" parent="android:Theme.Light.NoTitleBar.Fullscreen">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Theme.ImWatch" parent="ImWatch.__Theme">
+        <item name="leftButtonIcon">@drawable/ic_menu_back</item>
+        <item name="rightButtonIcon">@drawable/ic_menu_list</item>
+        <item name="rightButtonVisibility">gone</item>
+        <item name="leftButtonVisibility">visible</item>
+    </style>
+
+    <style name="Theme.ImWatch.NoTitleBar" parent="ImWatch.__Theme.NoTitleBar">
+        <item name="leftButtonIcon">@drawable/ic_menu_back</item>
+        <item name="rightButtonIcon">@drawable/ic_menu_list</item>
+        <item name="rightButtonVisibility">gone</item>
+        <item name="leftButtonVisibility">visible</item>
+    </style>
+
+    <style name="Theme.ImWatch.NoTitleBar.Fullscreen" parent="ImWatch.__Theme.NoTitleBar.Fullscreen">
+        <item name="leftButtonIcon">@drawable/ic_menu_back</item>
+        <item name="rightButtonIcon">@drawable/ic_menu_list</item>
+        <item name="rightButtonVisibility">gone</item>
+        <item name="leftButtonVisibility">visible</item>
+    </style>
+
+    <style name="Theme.ImWatch.Light" parent="ImWatch.__Theme.Light">
+        <item name="leftButtonIcon">@drawable/ic_menu_back</item>
+        <item name="rightButtonIcon">@drawable/ic_menu_list</item>
+        <item name="rightButtonVisibility">gone</item>
+        <item name="leftButtonVisibility">visible</item>
+    </style>
+
+    <style name="Theme.ImWatch.Light.NoTitleBar" parent="ImWatch.__Theme.Light.NoTitleBar">
+        <item name="leftButtonIcon">@drawable/ic_menu_back</item>
+        <item name="rightButtonIcon">@drawable/ic_menu_list</item>
+        <item name="rightButtonVisibility">gone</item>
+        <item name="leftButtonVisibility">visible</item>
+    </style>
+
+    <style name="Theme.ImWatch.Light.NoTitleBar.Fullscreen" parent="ImWatch.__Theme.Light.NoTitleBar.Fullscreen">
+        <item name="leftButtonIcon">@drawable/ic_menu_back</item>
+        <item name="rightButtonIcon">@drawable/ic_menu_list</item>
+        <item name="rightButtonVisibility">gone</item>
+        <item name="leftButtonVisibility">visible</item>
+    </style>
+
+</resources>

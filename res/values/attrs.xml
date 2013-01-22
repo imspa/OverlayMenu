@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Overlay Menu specific attributes. These attributes are used to customize
+         the overlay menu in XML files. -->
+    <declare-styleable name="OverlayMenu">
+        <!-- Determine which menu buttons should be shown. -->
+        <attr name="leftButtonVisibility">
+            <!-- Visible on screen; the default value. -->
+            <enum name="visible" value="0" />
+            <!-- Completely hidden, as if the view had not been added. -->
+            <enum name="gone" value="8" />
+        </attr>
+        <attr name="rightButtonVisibility">
+            <!-- Visible on screen; the default value. -->
+            <enum name="visible" value="0" />
+            <!-- Completely hidden, as if the view had not been added. -->
+            <enum name="gone" value="8" />
+        </attr>
+
+        <!-- The icon of the buttons -->
+        <attr name="leftButtonIcon" format="reference"/>
+        <attr name="rightButtonIcon" format="reference"/>
+
+        <!-- Fade in/out duration, auto fade out delay -->
+        <attr name="autoHide" format="boolean"/>
+        <attr name="touchSuspendsAutoHide" format="boolean"/>
+        <attr name="autoHideDelay" format="integer" min="0"/>
+        <attr name="fadeInDuration" format="integer" min="0"/>
+        <attr name="fadeOutDuration" format="integer" min="0"/>
+
+    </declare-styleable>
+</resources>
