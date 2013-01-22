@@ -41,7 +41,7 @@ public class DebugHelper {
      * presence of a file on the root of the external storage whose filename is
      * <pre>imWatch-DEBUG</pre>.
      * <p/>
-     * Please note that if {@link #isVerboseDebug()] returns <pre>true</pre>, it is
+     * Please note that if {@link #isVerboseDebug()} returns <pre>true</pre>, it is
      * assumed that regular debug is enabled as well, so in that case this method
      * returns <pre>true</pre> even if there's no imWatch-DEBUG file in
      * <pre>/imdata</pre>.

@@ -21,8 +21,39 @@ import it.imwatch.common.util.DebugHelper;
  * Theme.ImWatch, and a wrapper layout containing both the
  * OverlayMenu and the actual layout.
  * <p/>
- * An example of said wrapper layout can be found in the sample
- * app, in /res/layout/main_wrapper.xml.
+ * An example of said wrapper layout is as follows:
+ * <pre style="color:#000000; background-color:#ffffff; font-size:10pt; font-family:'monospace';">
+ * <span style="color:#000000; font-weight:bold">&lt;RelativeLayout</span> xmlns:<span
+ * style="color:#830000">android</span>=<span style="color:#ff0000">&quot;http://schemas.android
+ * .com/apk/res/android&quot;</span>
+ * xmlns:<span style="color:#830000">lib</span>=<span style="color:#ff0000">&quot;http://schemas.android
+ * .com/apk/res-auto&quot;</span>
+ * android:<span style="color:#830000">layout_height</span>=<span style="color:#ff0000">&quot;fill_parent&quot;</span>
+ * android:<span style="color:#830000">layout_width</span>=<span style="color:#ff0000">&quot;fill_parent&quot;</span>
+ * <span style="color:#000000; font-weight:bold">&gt;</span>
+ * <p/>
+ * <span style="color:#000000; font-weight:bold">&lt;include</span>
+ * <span style="color:#830000">layout</span>=<span style="color:#ff0000">&quot;&#64;layout/main&quot;</span>
+ * <span style="color:#000000; font-weight:bold">/&gt;</span>
+ * <p/>
+ * <span style="color:#000000; font-weight:bold">&lt;it</span>.imwatch.toolkit.OverlayMenu
+ * android:<span style="color:#830000">id</span>=<span style="color:#ff0000">&quot;&#64;+id/overlay_menu&quot;</span>
+ * android:<span style="color:#830000">layout_height</span>=<span style="color:#ff0000">&quot;wrap_content&quot;</span>
+ * android:<span style="color:#830000">layout_width</span>=<span style="color:#ff0000">&quot;fill_parent&quot;</span>
+ * android:<span style="color:#830000">layout_alignParentLeft</span>=<span style="color:#ff0000">&quot;true&quot;</span>
+ * android:<span style="color:#830000">layout_alignParentBottom</span>=<span style="color:#ff0000">&quot;true&quot;
+ * </span>
+ * android:<span style="color:#830000">layout_alignParentRight</span>=<span style="color:#ff0000">&quot;true&quot;
+ * </span>
+ * lib:<span style="color:#830000">rightButtonIcon</span>=<span style="color:#ff0000">&quot;&#64;
+ * drawable/ic_menu_back&quot;</span>
+ * <span style="color:#000000; font-weight:bold">/&gt;</span>
+ * <p/>
+ * <span style="color:#000000; font-weight:bold">&lt;/RelativeLayout&gt;</span>
+ * </pre>
+ * <p/>
+ * <p/>
+ * </RelativeLayout>
  * <p/>
  * <p/>
  * Use the following attributes in the XML layout to customize
@@ -36,7 +67,8 @@ import it.imwatch.common.util.DebugHelper;
  * <li><b>{@code rightButtonIcon}</b> The icon to show on the right button.
  * Default value: a "list" glyph.</li>
  * <li><b>{@code autoHide}</b> Menu buttons auto-hiding. Default value: {@code true}.</li>
- * <li><b>{@code touchSuspendsAutoHide}</b> Touching the menu buttons stops auto-hiding. Default value: {@code true}.</li>
+ * <li><b>{@code touchSuspendsAutoHide}</b> Touching the menu buttons stops auto-hiding. Default value: {@code
+ * true}.</li>
  * <li><b>{@code autoHideDelay}</b> Menu buttons auto-hiding delay, in milliseconds.
  * Default value: {@code 4000} ms.</li>
  * <li><b>{@code fadeInDuration}</b> Menu appearing animation duration, in milliseconds.
@@ -104,9 +136,7 @@ public class OverlayMenu extends RelativeLayout {
         initFields(attrs);
     }
 
-    /**
-     * Initializes the private fields.
-     */
+    /** Initializes the private fields. */
     private void initFields() {
         initFields(null);
     }
@@ -149,9 +179,7 @@ public class OverlayMenu extends RelativeLayout {
         }
     }
 
-    /**
-     * Initializes the menu appearing and hiding animations.
-     */
+    /** Initializes the menu appearing and hiding animations. */
     private void initAnimations() {
         mAnimMenuIn = AnimationUtils.loadAnimation(this.getContext(), R.anim.menu_in);
         mAnimMenuIn.setAnimationListener(new Animation.AnimationListener() {
@@ -247,10 +275,12 @@ public class OverlayMenu extends RelativeLayout {
      */
     @Override
     public void setVisibility(int visibility) {
-        if (visibility == VISIBLE)
+        if (visibility == VISIBLE) {
             showMenu();
-        else
+        }
+        else {
             hideMenu();
+        }
     }
 
     /**
@@ -319,7 +349,8 @@ public class OverlayMenu extends RelativeLayout {
                     OverlayMenu.this.startAnimation(mAnimMenuIn);
                 }
             });
-        } else {
+        }
+        else {
             if (DEBUG) {
                 Log.d("OverlayMenu", "Delaying menu auto-hide as requested.");
             }
@@ -378,9 +409,9 @@ public class OverlayMenu extends RelativeLayout {
     public int getRightButtonVisibility() {
         return mRightButtonVisibility;
     }
-    
+
     /**
-     * Gets the current visibility status of the left menu button 
+     * Gets the current visibility status of the left menu button
      * when the OverlayMenu is displayed.
      *
      * @return Returns the visibility status of left menu button.
@@ -388,43 +419,47 @@ public class OverlayMenu extends RelativeLayout {
     public int getLeftButtonVisibility() {
         return mLeftButtonVisibility;
     }
-    
+
     /**
-     * Sets the visibility status of the right menu button 
+     * Sets the visibility status of the right menu button
      * when the OverlayMenu is displayed
-     * 
+     *
      * @param newStatus The new status of the right menu button.
      */
     public void setRightButtonVisibility(int newStatus) {
         if (DEBUG) {
             Log.d("OverlayMenu", "Setting right button visibility to " +
-                  (newStatus == View.GONE ? "GONE" : (newStatus == View.VISIBLE ? "VISIBLE" : "INVISIBLE")));
+                                 (newStatus == View.GONE ?
+                                  "GONE" :
+                                  (newStatus == View.VISIBLE ? "VISIBLE" : "INVISIBLE")));
         }
 
         mRightButtonVisibility = newStatus;
-        if(isMenuVisible()){
-        	mRightButton.setVisibility(mRightButtonVisibility);
+        if (isMenuVisible()) {
+            mRightButton.setVisibility(mRightButtonVisibility);
         }
     }
-    
+
     /**
-     * Sets the visibility status of the left menu button 
+     * Sets the visibility status of the left menu button
      * when the OverlayMenu is displayed
-     * 
+     *
      * @param newStatus The new status of the left menu button.
      */
     public void setLeftButtonVisibility(int newStatus) {
         if (DEBUG) {
             Log.d("OverlayMenu", "Setting left button visibility to " +
-                                 (newStatus == View.GONE ? "GONE" : (newStatus == View.VISIBLE ? "VISIBLE" : "INVISIBLE")));
+                                 (newStatus == View.GONE ?
+                                  "GONE" :
+                                  (newStatus == View.VISIBLE ? "VISIBLE" : "INVISIBLE")));
         }
 
         mLeftButtonVisibility = newStatus;
-        if(isMenuVisible()){
-        	mLeftButton.setVisibility(mLeftButtonVisibility);
+        if (isMenuVisible()) {
+            mLeftButton.setVisibility(mLeftButtonVisibility);
         }
     }
-    
+
 
     /**
      * Gets a reference to the right menu button.
@@ -488,8 +523,9 @@ public class OverlayMenu extends RelativeLayout {
      *                 Must be equal or greater than zero.
      */
     public void setAnimInDuration(int duration) {
-        if (duration < 0)
+        if (duration < 0) {
             throw new IllegalArgumentException("The animation duration must be zero or a positive value.");
+        }
 
         mFadeInDuration = duration;
     }
@@ -510,8 +546,9 @@ public class OverlayMenu extends RelativeLayout {
      *                 Must be equal or greater than zero.
      */
     public void setAnimOutDuration(int duration) {
-        if (duration < 0)
+        if (duration < 0) {
             throw new IllegalArgumentException("The animation duration must be zero or a positive value.");
+        }
 
         mFadeOutDuration = duration;
     }
@@ -531,15 +568,14 @@ public class OverlayMenu extends RelativeLayout {
      * @param delay The menu auto-hiding delay, in milliseconds.
      */
     public void setAutoHideDelay(int delay) {
-        if (delay < 0)
+        if (delay < 0) {
             throw new IllegalArgumentException("The delay must be zero or a positive value.");
+        }
 
         mAutoHideDelay = delay;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         // Only handle Touch events when we're visible
@@ -550,7 +586,8 @@ public class OverlayMenu extends RelativeLayout {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     // Suspend auto-hiding while we're focused
                     mHandler.removeCallbacks(mAutoHideRunnable);
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                }
+                else if (event.getAction() == MotionEvent.ACTION_UP) {
                     // Resume auto-hiding
                     mHandler.removeCallbacks(mAutoHideRunnable);
                     mHandler.postDelayed(mAutoHideRunnable, mAutoHideDelay);
@@ -567,12 +604,14 @@ public class OverlayMenu extends RelativeLayout {
      * events pass through.
      *
      * @param event The event to check.
+     *
      * @return Returns false if a touch event is performed on the root
      *         menu View, true if on one of the menu buttons.
      */
     public boolean isEventOnButtons(MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_UP)
+        if (event.getAction() == MotionEvent.ACTION_UP) {
             return true;
+        }
 
         float x = event.getX(), y = event.getY();
 
@@ -580,9 +619,7 @@ public class OverlayMenu extends RelativeLayout {
                (x > mRightButton.getLeft() && y > mRightButton.getTop());
     }
 
-    /**
-     * Listener for menu visibility state changes.
-     */
+    /** Listener for menu visibility state changes. */
     public interface OnMenuStateChangeListener {
 
         /**
